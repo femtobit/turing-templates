@@ -11,5 +11,5 @@
     (println (str "Usage: java -jar turing-templates*.jar infile outfile"))
     (let [infile  (nth args 0)
           outfile (nth args 1)]
-      (spit outfile (writer/tm-to-cpp-templates (parse/parse-file infile))))))
+      (spit outfile (writer/convert-turing-machine (parse/parse-file infile))))))
 

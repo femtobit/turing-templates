@@ -1,3 +1,20 @@
+; Copyright 2013 Damian Hofmann
+;
+; This file is part of turing-templates.
+;
+; turing-templates is free software: you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation, either version 3 of the License, or
+; (at your option) any later version.
+;
+; turing-templates is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with turing-templates. If not, see <http://www.gnu.org/licenses/>.
+
 (ns turing-templates.writer
   (:require [clojure.string :as s])
   (:require [turing-templates.turing-machine :as tm]))
@@ -128,10 +145,11 @@ struct ApplyAction<$STATE$, Action, Tape_Left, Tape_Current, Tape_Right, Delta>
 
 ; Main function
 
-(defn convert-turing-machine [turing-machine]
+(defn convert-turing-machine
   "Expects a turing machine. Returns C++ source code containing the TM in
   template form, so that it will run when the C++ code is compiled and display
   its output as an error message."
+  [turing-machine]
   (let [tm (prepare-tm turing-machine)
         template (slurp (clojure.java.io/resource "template.cpp"))]
     (into-template template

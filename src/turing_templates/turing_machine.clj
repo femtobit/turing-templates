@@ -1,3 +1,20 @@
+; Copyright 2013 Damian Hofmann
+;
+; This file is part of turing-templates.
+;
+; turing-templates is free software: you can redistribute it and/or modify
+; it under the terms of the GNU General Public License as published by
+; the Free Software Foundation, either version 3 of the License, or
+; (at your option) any later version.
+;
+; turing-templates is distributed in the hope that it will be useful,
+; but WITHOUT ANY WARRANTY; without even the implied warranty of
+; MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+; GNU General Public License for more details.
+;
+; You should have received a copy of the GNU General Public License
+; along with turing-templates. If not, see <http://www.gnu.org/licenses/>.
+
 (ns turing-templates.turing-machine)
 
 (def example-tm
@@ -14,18 +31,19 @@
       ["1" "#", "#" "2" :right]]
    })
 
-(defn create [states symbols start end ts]
+(defn create
   "Returns a turing machine with given attributes."
+  [states symbols start end ts]
   {:states states
    :symbols symbols
    :start start
    :end end
    :transitions ts})
 
-(defn transition [tm state symb]
+(defn transition
   "Returns the turing machines transition for given state and symbol
-  or nil,if none exists."
-
+   or nil, if none exists."
+  [tm state symb]
   (let [ts (tm :transitions)]
     (first (filter (fn [t]
       (and

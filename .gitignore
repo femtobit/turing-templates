@@ -1,0 +1,17 @@
+## vim
+
+*.s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+*~
+
+## Clojure
+
+pom.xml
+*jar
+/lib/
+/classes/
+/target/
+.lein-repl-history
+

@@ -3,7 +3,7 @@
  * Try to compile this file to run the Turing machine.
  *
  * Created by turing-templates,
- *   https://github.com/femtobit/turing-templates.
+ *   https://github.com/picobyte/turing-templates.
  * Based on "C++ Templates are Turing Complete" by Todd Veldhuizen,
  *   http://ubietylab.net/ubigraph/content/Papers/pdf/CppTuring.pdf.
  */

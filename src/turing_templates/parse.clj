@@ -43,7 +43,7 @@
   (map
     (fn [t]
       (filter
-        (fn [x] (and (-> x (not= :from) (not= :to) (not= :transition))))
+        (fn [x] (not (contains? #{:from :to :transition} x)))
         (flatten t)))
       ts))
 
